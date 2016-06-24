@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fragmenttest.iml" filepath="$PROJECT_DIR$/fragmenttest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/phoneprotect/phoneprotect.iml" filepath="$PROJECT_DIR$/phoneprotect/phoneprotect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/weixin_demo/weixin_demo.iml" filepath="$PROJECT_DIR$/weixin_demo/weixin_demo.iml" />
+    </modules>
+  </component>
+</project>

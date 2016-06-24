@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="org.hyb.demo.phoneprotect.HomeActivity">
+
+
+
+
+    <!--layout_gravity是设置控件在父控件的位置-->
+    <!---gravity设置控件的内容的位置-->
+    <!--
+layout_marginTop:距离某控件的距离(外边距)
+paddingTop:距离控件内边框的距离(内边距)
+    -->
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="功能列表"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+
+        android:textSize="22sp"
+        android:background="@android:color/holo_green_dark"
+        android:gravity="center_horizontal"
+        />
+    <!--
+    ellipsize:none省略后面的文字
+    start隐藏前面的文字
+    middle隐藏中间的文字
+    end隐藏后面的文字
+    marguee实现文字滚动的操作
+    singleLine:单行显示文字
+    focusableInTouchMode:触摸获取焦点(TextView是天生没有点击事件和获取焦点事件)
+    focusable:是否获取焦点
+    marqueeRepeatLimit:设置滚动次数
+    -->
+    <org.hyb.demo.ui.HomeTextView
+        android:id="@+id/top_tv"
+        android:text="手机卫士顶呱呱,打开七次可以召唤神龙辅助杀毒,速度超神顶呱呱"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:ellipsize="none"
+        android:textSize="16sp"
+        android:layout_below="@+id/textView"
+        android:focusableInTouchMode="true"
+        android:focusable="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        />
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:numColumns="3"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_tv"
+        android:layout_marginTop="10dp"
+        android:verticalSpacing="20dp"
+        ></GridView>
+
+</RelativeLayout>
