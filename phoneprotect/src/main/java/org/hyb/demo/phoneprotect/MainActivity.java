@@ -2,6 +2,7 @@ package org.hyb.demo.phoneprotect;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.pdf.PdfDocument;
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     enterHomeActivity();
                     break;
                 case MSG_SERVICE_ERROR:
-                    Toast.makeText(getApplicationContext(),"网络异常",0).show();
+                    Toast.makeText(getApplicationContext(),"网络异常",Toast.LENGTH_SHORT).show();
                     enterHomeActivity();
                     break;
             }
@@ -103,8 +104,6 @@ public class MainActivity extends AppCompatActivity {
         //判断sd卡是否挂载
         if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED))
         {
-            Log.d("hyb","挂载了"+apkurl);
-
             HttpUtils httpUtils=new HttpUtils();
             //url:新版本下载的路径
             //target:保存新版本的目录
@@ -183,7 +182,23 @@ public class MainActivity extends AppCompatActivity {
         TextView versionName=(TextView)findViewById(R.id.version);
         tv_splash_plan=(TextView)findViewById(R.id.tv_splash_plan);
         versionName.setText("版本号:"+getVersionName());
-        Update();
+        SharedPreferences sp=getSharedPreferences("Config",MODE_PRIVATE);
+
+        if(sp.getBoolean("update",true))
+        {
+
+            Update();
+        }
+        else{
+            new Thread(){
+                @Override
+                public void run() {
+                    SystemClock.sleep(2000);//先睡2秒钟,不能让主线程sleep,主线程有个渲染界面的操作,主线程sleep就没有办法渲染界面
+                    enterHomeActivity();
+                }
+            }.start();
+
+        }
     }
     /**
      * 提醒用户跟新版本

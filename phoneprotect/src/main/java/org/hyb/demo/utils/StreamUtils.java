@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.io.StringWriter;
 
 /**
- * Created by Administrator on 2016/6/23.
+ * Created by hyb on 2016/6/23.
  */
 public class StreamUtils {
     /**
