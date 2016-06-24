@@ -1,1 +1,1 @@
-include ':app', ':weixin_demo', ':phoneprotect'
+include ':phoneprotect'
