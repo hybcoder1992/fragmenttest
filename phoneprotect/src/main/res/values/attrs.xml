@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SettingView">
+        <!--给settingview添加了一个string类型的属性,属性名称叫setting_title-->
+        <attr name="setting_title" format="string"/>
+        <attr name="setting_desc_on" format="string"/>
+        <attr name="setting_desc_off" format="string"/>
+    </declare-styleable>
+</resources>

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:hyb="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     >
 
@@ -22,7 +26,12 @@
             android:id="@+id/sv_setting_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            hyb:setting_title="提示跟新"
+            hyb:setting_desc_on="打开提示跟新"
+            hyb:setting_desc_off="关闭提示跟新"
             android:layout_below="@+id/tv_top"/>
+
+
 
 
 </RelativeLayout>

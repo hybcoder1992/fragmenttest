@@ -18,15 +18,15 @@ public class SettingActivity extends AppCompatActivity {
         super.setContentView(R.layout.activity_setting);
         sp=getSharedPreferences("Config",MODE_PRIVATE);
         sv_setting_update=(SettingView)findViewById(R.id.sv_setting_update);
-        sv_setting_update.setTitle("提示跟新");
+        //sv_setting_update.setTitle("提示跟新");
         if(sp.getBoolean("update",true))
         {
-            sv_setting_update.setDesc("打开提示更新");
+            //sv_setting_update.setDesc("打开提示更新");
             sv_setting_update.setCheckBox(true);
         }
         else
         {
-            sv_setting_update.setDesc("关闭提示更新");
+            //sv_setting_update.setDesc("关闭提示更新");
             sv_setting_update.setCheckBox(false);
         }
         sv_setting_update.setOnClickListener(new View.OnClickListener() {
@@ -36,14 +36,14 @@ public class SettingActivity extends AppCompatActivity {
                 //更改状态
                 if(sv_setting_update.isChecked())
                 {
-                    sv_setting_update.setDesc("关闭提示更新");
+                    //sv_setting_update.setDesc("关闭提示更新");
                     sv_setting_update.setCheckBox(false);
                     //保存状态
 
                     editor.putBoolean("update",false);
                 }
                 else {
-                    sv_setting_update.setDesc("打开提示更新");
+                    //sv_setting_update.setDesc("打开提示更新");
                     sv_setting_update.setCheckBox(true);
                     //保存状态
                     editor.putBoolean("update",true);

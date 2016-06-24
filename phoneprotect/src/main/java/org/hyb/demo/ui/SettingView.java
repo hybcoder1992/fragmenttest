@@ -2,6 +2,7 @@ package org.hyb.demo.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RelativeLayout;
@@ -16,14 +17,27 @@ public class SettingView  extends RelativeLayout{
     TextView title_tv;
     TextView desc_tv;
     CheckBox update_cb;
+    String setting_desc_on;
+    String setting_desc_off;
     public SettingView(Context context) {
         super(context);
         init();
     }
-
+/**
+ * AttributeSet保存有控件的所有属性
+ * */
     public SettingView(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
+        //通过命名空间和属性的名称获取属性的值
+        setting_desc_on=attrs.getAttributeValue("http://schemas.android.com/apk/res-auto","setting_desc_on");
+        setting_desc_off=attrs.getAttributeValue("http://schemas.android.com/apk/res-auto","setting_desc_off");
+        String setting_title=attrs.getAttributeValue("http://schemas.android.com/apk/res-auto","setting_title");
+        title_tv.setText(setting_title);
+        if(isChecked())
+            desc_tv.setText(setting_desc_on);
+        else
+            desc_tv.setText(setting_desc_off);
     }
 
     public SettingView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -54,6 +68,10 @@ public class SettingView  extends RelativeLayout{
     public void setCheckBox(boolean isChecked)
     {
         update_cb.setChecked(isChecked);
+        if(isChecked())
+            desc_tv.setText(setting_desc_on);
+        else
+            desc_tv.setText(setting_desc_off);
     }
     public boolean isChecked()
     {

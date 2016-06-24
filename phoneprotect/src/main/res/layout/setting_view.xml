@@ -13,7 +13,6 @@
         android:layout_margin="5dp"
         android:textColor="#ffffffff"
         />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,7 +23,6 @@
         android:textColor="#aaffffff"
         android:textSize="16sp"
         />
-
     <CheckBox
         android:id="@+id/cb_setting_update"
         android:focusable="false"
@@ -35,13 +33,10 @@
         android:layout_centerVertical="true"
         android:layout_marginRight="17dp"
         />
-
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_below="@+id/tv_setting_desc"
         android:background="#77000000"
         android:layout_marginTop="5dp"/>
-
-
 </RelativeLayout>
