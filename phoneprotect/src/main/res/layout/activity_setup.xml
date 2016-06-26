@@ -133,6 +133,8 @@ android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
+            android:background="@drawable/button"
+            android:drawableRight="@mipmap/next"
             android:text="下一步"
             />
 
