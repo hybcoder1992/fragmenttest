@@ -19,7 +19,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".LostFindActivity" />
+        <activity android:name=".SetupActivity"></activity>
     </application>
 
 </manifest>
