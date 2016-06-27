@@ -16,7 +16,7 @@ SharedPreferences sp;
         if(sp.getBoolean("first",true))
         {
             //第一次进入
-            Intent intent=new Intent(this,SetupActivity.class);
+            Intent intent=new Intent(this,Setup1Activity.class);
             startActivity(intent);
             finish();
         }

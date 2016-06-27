@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hyb="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,91 +8,59 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Setup1Activity">
-
+    tools:context="org.hyb.demo.phoneprotect.Setup2Activity">
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="1、欢迎进入手机防盗设置界面"
+        android:text="2、手机卡绑定"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
-
         android:textSize="20sp"
         android:background="@android:color/holo_green_dark"
         android:gravity="center_horizontal"
         />
-
-<!--
-    android:drawableLeft:在文本左边设置一张图片
-    @android:drawable/star_big_on是系统的图片
-  -->
     <LinearLayout
         android:id="@+id/ll1"
         android:orientation="vertical"
-        android:layout_width="match_parent"
         android:layout_below="@+id/textView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <!--layout_margin距离上下左右的距离-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="你的手机防盗卫士"
+            android:text="通过绑定SIM卡:\n下次重启手机如果发现SIM卡变化就会发送报警短信"
             android:layout_below="@+id/textView1"
+
             android:layout_margin="5dp"
             android:textSize="18sp"
             />
-        <TextView
+        <org.hyb.demo.ui.SettingView
+            android:id="@+id/sv_setting_update"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SIM卡变更报警"
-            android:layout_margin="5dp"
-            android:drawableLeft="@android:drawable/star_big_on"
-            android:gravity="center_vertical"
-            android:textSize="16sp"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="GPS追踪"
-            android:layout_margin="5dp"
-            android:drawableLeft="@android:drawable/star_big_on"
-            android:gravity="center_vertical"
-            android:textSize="16sp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="远程数据销毁"
-            android:layout_margin="5dp"
-            android:drawableLeft="@android:drawable/star_big_on"
-            android:gravity="center_vertical"
-            android:textSize="16sp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="远程锁屏"
-            android:layout_margin="5dp"
-            android:drawableLeft="@android:drawable/star_big_on"
-            android:gravity="center_vertical"
-            android:textSize="16sp"
+            hyb:setting_title="点击绑定SIM卡"
+            hyb:setting_desc_on="sim卡已经绑定"
+            hyb:setting_desc_off="sim卡没有绑定"
             />
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/ll2"
         android:layout_below="@+id/ll1"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
-android:layout_marginTop="20dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content">
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:src="@android:drawable/presence_invisible"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:src="@android:drawable/presence_online"
             />
         <ImageView
@@ -106,28 +75,25 @@ android:layout_marginTop="20dp"
             android:layout_marginLeft="5dp"
             android:src="@android:drawable/presence_invisible"
             />
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:src="@android:drawable/presence_invisible"
-            />
-
     </LinearLayout>
-
     <RelativeLayout
         android:layout_marginTop="10dp"
         android:layout_below="@+id/ll2"
         android:layout_width="match_parent"
-
         android:layout_height="match_parent">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/setup1"
+            android:src="@mipmap/bind"
             android:layout_centerInParent="true"
             />
-<!--
+        <Button
+            style="@style/next" />
+
+        <Button
+            style="@style/prev"
+             />
+        <!--
         <Button
             android:id="@+id/btn_next"
             android:layout_width="wrap_content"
@@ -136,13 +102,21 @@ android:layout_marginTop="20dp"
             android:layout_alignParentRight="true"
             android:background="@drawable/button"
             android:drawableRight="@mipmap/next"
-
             android:text="下一步"
             />
--->
+
         <Button
-            style="@style/next"
-             />
+            android:id="@+id/btn_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/button"
+            android:drawableLeft="@mipmap/previous"
+            android:text="上一步"
+            />
+-->
     </RelativeLayout>
+
 
 </RelativeLayout>

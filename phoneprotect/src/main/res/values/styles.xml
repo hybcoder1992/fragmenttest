@@ -7,5 +7,40 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+<!--
+<Button
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/button"
+            android:drawableRight="@mipmap/next"
+            android:text="下一步"
+            />
+-->
+    <style name="next">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:text">下一步</item>
+        <item name="android:drawableRight">@mipmap/next</item>
+        <item name="android:onClick">next</item>
+    </style>
+
+    <style name="prev">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:text">上一步</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:drawableLeft">@mipmap/previous</item>
+        <item name="android:onClick">prev</item>
+    </style>
+
 
 </resources>
