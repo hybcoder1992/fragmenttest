@@ -4,7 +4,9 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/><!--获取手机sim卡信息的权限-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/><!--接受手机重启广播的权限-->
+    <uses-permission android:name="android.permission.SEND_SMS"/><!--发短信的权限-->
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,7 +27,13 @@
         <activity android:name=".Setup2Activity" />
         <activity android:name=".Setup3Activity" />
         <activity android:name=".Setup4Activity" />
-        <activity android:name=".SetupBaseActivity"></activity>
+        <receiver android:name="org.hyb.demo.receiver.BootCompleteReceiver">
+            <!--priority值越大优先级越高越先接收到广播-->
+            <intent-filter android:priority="1000">
+                <!--手机重启广播-->
+                 <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 public class LostFindActivity extends AppCompatActivity {
 SharedPreferences sp;
@@ -24,5 +26,13 @@ SharedPreferences sp;
         {
             setContentView(R.layout.activity_lost_find);
         }
+        TextView tv_reset=(TextView)findViewById(R.id.tv_reset);
+        tv_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(LostFindActivity.this,Setup1Activity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
